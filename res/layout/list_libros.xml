@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="10dip"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView  
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:text="Selecione un Libro"
+        android:textSize="20dip"
+        android:textColor="@android:color/black"/>
+    <com.emilsjolander.components.StickyListHeaders.StickyListHeadersListView
+        xmlns:slh="http://schemas.android.com/apk/res-auto"
+        android:id="@android:id/list"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        slh:areHeadersSticky="true"
+        android:clipToPadding="false"/>
+</LinearLayout>
+

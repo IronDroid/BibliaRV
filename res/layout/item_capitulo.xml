@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/versiculo"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:textSize="18dip"
+        android:textColor="@android:color/black"/>
+    <LinearLayout
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

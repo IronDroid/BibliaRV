@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip"
+    android:background="@drawable/bg"
+    android:gravity="center">
+    <Button
+        android:id="@+id/libros"
+        android:background="@drawable/button_selecctor_one"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:padding="20dip"
+        android:text="Libros de la Biblia"
+        android:textSize="25dip"
+        android:onClick="onClickLibros"/>
+    <Button
+        android:id="@+id/favorito"
+        android:background="@drawable/button_selecctor_one"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:padding="20dip"
+        android:text="Textos Favorito"
+        android:textSize="25dip"
+        android:onClick="onClickFavorito"/>
+</LinearLayout>
