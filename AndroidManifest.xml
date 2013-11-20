@@ -3,8 +3,11 @@
           package="org.ajcm.bibliarv"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="7"/>
-    <application android:label="@string/app_name" android:name=".Singleton" android:icon="@drawable/la_biblia" android:theme="@android:style/Theme.NoTitleBar">
+    <uses-sdk android:targetSdkVersion="17"/>
+    <application 
+        android:label="@string/app_name" 
+        android:name=".Singleton" 
+        android:icon="@drawable/la_biblia">
         <activity 
             android:name=".SplashScreemActivity"
             android:theme="@android:style/Theme.NoTitleBar"
@@ -20,9 +23,8 @@
             android:name=".LibroActivity"/>
         <activity
             android:name=".libros.TextoActivity"
-            android:theme="@style/Theme.PageIndicatorDefaults"/>
+            android:theme="@style/StyledIndicators"/>
         <activity
-            android:name=".favorito.FavoritoListActivity"
-            />
+            android:name=".favorito.FavoritoListActivity"/>
     </application>
 </manifest> 

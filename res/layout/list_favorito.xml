@@ -2,16 +2,8 @@
 <LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="10dip"
-    android:background="@drawable/bg"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content" 
-        android:text="Lista de Textos Favoritos"
-        android:textSize="20dip"
-        android:textColor="@android:color/black"/>
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"

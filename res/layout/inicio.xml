@@ -1,31 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:paddingLeft="20dip"
-    android:paddingRight="20dip"
-    android:background="@drawable/bg"
-    android:gravity="center">
-    <Button
-        android:id="@+id/libros"
-        android:background="@drawable/button_selecctor_one"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TabHost
+        android:id="@android:id/tabhost"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:padding="20dip"
-        android:text="Libros de la Biblia"
-        android:textSize="25dip"
-        android:onClick="onClickLibros"/>
-    <Button
-        android:id="@+id/favorito"
-        android:background="@drawable/button_selecctor_one"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:padding="20dip"
-        android:text="Textos Favorito"
-        android:textSize="25dip"
-        android:onClick="onClickFavorito"/>
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"/>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:orientation="vertical"
+                    android:padding="5dip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <com.emilsjolander.components.StickyListHeaders.StickyListHeadersListView
+                        xmlns:slh="http://schemas.android.com/apk/res-auto"
+                        android:id="@android:id/list"
+                        android:background="@android:color/transparent"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        slh:areHeadersSticky="true"
+                        android:clipToPadding="false"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <ListView
+                        android:id="@+id/list_favoritos"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:dividerHeight="2dip"
+                        android:divider="@android:color/white"
+                        android:background="@android:color/transparent"
+                        android:cacheColorHint="@android:color/transparent"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 </LinearLayout>

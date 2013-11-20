@@ -3,15 +3,15 @@ package org.ajcm.bibliarv.libros;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 import com.viewpagerindicator.TabPageIndicator;
 import java.util.LinkedList;
 import org.ajcm.bibliarv.R;
@@ -63,29 +63,22 @@ public class TextoActivity extends Activity {
         @Override
         public Object instantiateItem(View container, int position) {
             LayoutInflater inflater = (LayoutInflater) container.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            ListView list = (ListView) inflater.inflate(R.layout.capitulo, null);
-            Cursor versiculo = db.getCapitulo(idLibro, position + 1);
-            versiculo.moveToFirst();
-            ll = new LinkedList<Versiculo>();
-            Versiculo v;
-            do {
-                v = new Versiculo();
-                v.setFavorito(versiculo.getInt(4));
-                v.setTexto(versiculo.getInt(2) + " - " + versiculo.getString(3));
-                ll.add(v);
-            } while (versiculo.moveToNext());
+            final ListView list = (ListView) inflater.inflate(R.layout.capitulo, null);
+            listll(position);
             list.setAdapter(new CapituloAdapter(getApplicationContext(), R.layout.texto_lista, ll));
             list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-
                 public boolean onItemLongClick(AdapterView<?> adapter, View view, int position, long id) {
-                    ImageView iv = (ImageView) view.findViewById(R.id.star);
+                    LinearLayout lll = (LinearLayout) view.findViewById(R.id.label);
                     if (db.update(getIntent().getIntExtra("libro", 0), pager.getCurrentItem() + 1, position + 1)) {
-                        iv.setImageResource(R.drawable.btn_star_big_on);
-                        return true;
+                        lll.setBackgroundColor(Color.rgb(244, 211, 108));
                     } else {
-                        iv.setImageResource(R.drawable.btn_star_big_off_disable);
-                        return false;
+                        lll.setBackgroundColor(Color.TRANSPARENT);
                     }
+                    CapituloAdapter ca =(CapituloAdapter) list.getAdapter();
+                    listll(pager.getCurrentItem());
+                    ca.setLl(ll);
+                    ca.notifyDataSetChanged();
+                    return true;
                 }
             });
             ((ViewPager) container).addView(list, 0);
@@ -105,6 +98,19 @@ public class TextoActivity extends Activity {
         @Override
         public void destroyItem(View arg0, int arg1, Object arg2) {
             ((ViewPager) arg0).removeView((View) arg2);
+        }
+
+        private void listll(int position) {
+            Cursor versiculo = db.getCapitulo(idLibro, position + 1);
+            versiculo.moveToFirst();
+            ll = new LinkedList<Versiculo>();
+            Versiculo v;
+            do {
+                v = new Versiculo();
+                v.setFavorito(versiculo.getInt(4));
+                v.setTexto(versiculo.getInt(2) + " - " + versiculo.getString(3));
+                ll.add(v);
+            } while (versiculo.moveToNext());
         }
     }
 }

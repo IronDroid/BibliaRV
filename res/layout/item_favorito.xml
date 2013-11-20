@@ -5,19 +5,18 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/referencia"
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content"
-        android:paddingTop="5dip"
-        android:paddingBottom="5dip"
-        android:textSize="12dip"
-        android:textColor="@android:color/black"/>
-    <TextView
         android:id="@+id/favorito"
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content"
         android:paddingTop="5dip"
         android:paddingBottom="5dip"
         android:textSize="18dip"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/white"/>
+    <TextView
+        android:id="@+id/referencia"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dip"
+        android:textSize="12dip"
+        android:textColor="@android:color/white"/>
 </LinearLayout>

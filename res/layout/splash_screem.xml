@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/bg"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="fill_parent"
@@ -16,7 +15,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20dip"/>
         <ImageView
             android:src="@drawable/splash_screem_biblia"
@@ -29,18 +28,18 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="18dip"/>
     <TextView
-        android:text="Twitter: @jhon_limaster"
+        android:text="Twitter: @jhonlimaster"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:gravity="center_horizontal"/>
     <TextView
         android:text="Email: jhonlimaster@gmail.com"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:gravity="center_horizontal"/>
 </LinearLayout>

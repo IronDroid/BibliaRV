@@ -5,7 +5,6 @@
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:paddingTop="5dip"
-    android:paddingBottom="5dip"
+    android:padding="5dip"
     android:textSize="16dip"
-    android:textColor="@android:color/black"/>
+    android:textColor="@android:color/white"/>
